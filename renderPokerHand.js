@@ -1,9 +1,15 @@
 
-function renderPokerHand(pokerHand) {
+function renderPokerHand(pokerHandAbstraction) {
     // HINT: You can use <img /> tags that point to the card images in the /cards folder
+    const pokerhandHTML = pokerHandAbstraction.map( hand => {
+        return `
+            <img src='cards/${hand.value}${hand.suit}.png' class='pokerHand'>
+        `
+    })
+    
     return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(pokerHand)}</code>
+        <div class="text-center mt-5 hand">
+            ${pokerhandHTML.join('')}
         </div>
     `
 }

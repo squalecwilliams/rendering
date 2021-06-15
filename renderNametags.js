@@ -1,8 +1,16 @@
 
-function renderNametags(nametags) {
+function renderNametags(nametagsAbstraction) {
+    const nametagsHTML = nametagsAbstraction.map( name => {
+        return `
+            <div class='nametag'>
+                <p class='intro' style='color:white;'>Hello, my name is:</p>
+                <p class='name'>${name}</p>
+            </div>
+        `
+    })
     return `
         <div class="text-center mt-5">
-            <code>${JSON.stringify(nametags)}</code>
+            ${nametagsHTML.join('')}
         </div>
     `
 }

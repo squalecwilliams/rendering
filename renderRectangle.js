@@ -1,8 +1,8 @@
 
-function renderRectangle(rectangle) {
+function renderRectangle(rectangleAbstraction) {
     return `
         <div class="text-center mt-5">
-            <code>${JSON.stringify(rectangle)}</code>
+            <div style='background-color:${rectangleAbstraction.color}; width:${rectangleAbstraction.width}px; height:${rectangleAbstraction.height}px;'></div>
         </div>
     `
 }

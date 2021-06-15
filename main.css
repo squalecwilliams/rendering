@@ -1,1 +1,191 @@
 /* Type whatever CSS you need here! */
+.cover-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 30%;
+}
+h3 {
+    align-self: flex-end;
+}
+img{
+    width: 100px;
+    height: 100px;
+}
+.song-sort {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.circle-stack{
+   display: flex;
+   flex-direction: column;
+   height: 50%;
+   width: 50%;
+   align-content: space-evenly;
+   justify-content: center;
+   align-items: center;
+}
+
+.movie-sort{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+    width: 40%;
+    background-color: grey;
+    border-radius: 5%;
+    padding: 1%;
+    margin: 1%;
+}
+.movie-sort-items{
+    background-color: white;
+    border-radius: 5%;
+    align-items: flex-start;
+    margin: 1%;
+}
+
+.nametag{
+    margin: 1%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-self: center;
+    height: 100px;
+    width:200px;
+    border: solid;
+}
+.intro{
+    background-color: blue;
+    align-self: center;
+    justify-self: center;
+    height: 33%;
+    width:100%;
+}
+.name{
+    height: 67%;
+    width:100%;
+    align-self: center;
+    justify-self: center;
+}
+
+.hand{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    justify-items: center;
+    width: 50%;
+    height: 50%;
+}
+.pokerHand{
+    width: 20%;
+    height: 100%;
+    margin: 1%;
+}
+
+.food-sort{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+}
+.food-item-sort{
+    padding-left: 1%;
+    padding-bottom: 1%;
+    background-color: lightgrey;
+    border-radius: 5%;
+    margin: 1%;
+    width: 23%;
+    height: 10%;
+}
+.food-img{
+    width: 10px;
+    height: 20px;
+}
+.money{
+    display: flex;
+    align-self: flex-start;
+    width: 100%;
+    height: 10%;
+}
+
+.roll{
+    width: 20%;
+}
+.student-sort{
+    border: solid;
+    margin: 2%;
+}
+.student-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+}
+
+.tweet{
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    justify-self: flex-start;
+    width: 500px;
+    border: solid;
+    margin: 1%;
+    padding: 15px;
+}
+.profile-area{
+    display: flex;
+    flex-direction: row;
+}
+.box{
+    width: 100%;
+    height: 33%;
+}
+.profile-box{
+    width: 100%;
+    height: 33%;
+}
+.icon{
+    width: 25px;
+    height: 25px;
+}
+.tweet-extras{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+    height: 33%;
+}
+.extras{
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+}
+.profile-pic{
+    width: 50px;
+    height: 50px;
+}
+.profile-info{
+    width: 80%;
+    height: 25%;
+    align-self: auto;
+    justify-self: flex-start;
+    padding-left: 10px;
+}
+.survey{
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+}

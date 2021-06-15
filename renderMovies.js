@@ -1,8 +1,24 @@
 
-function renderMovies(movies) {
+function renderMovies(moviesAbstraction) {
+    const moviesHTML = moviesAbstraction.map( movie => {
+        return`
+            <div class='movie-sort'>
+                <img src=${movie.poster} style='height:100%; width:40%; margin:1%;'>
+                <div class='movie-sort-items'style='height:100%; width:60%;'>
+                    <h4>${movie.title}</h4>
+                    <p>${movie.year}</p>
+                    <a href='https://www.imdb.com/title/${movie.imdbID}/?'>IMDB:</a>
+                    <p>${movie.imdbRating} / 10</p>
+                    <p>Rotten Tomatoes:</p> 
+                    <p>${movie.rottenTomatoesRating*100}%</p>
+                </div>
+            </div>
+        `
+    })
+    
     return `
         <div class="text-center mt-5">
-            <code>${JSON.stringify(movies)}</code>
+            ${moviesHTML.join('')}
         </div>
     `
 }

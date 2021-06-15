@@ -1,9 +1,39 @@
 
-function renderAlbums(albums) {
-    return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(albums)}</code>
+function renderAlbums(albumsAbstraction) {
+
+    const albums = albumsAbstraction[0].albums
+    const artist = `<h1>${albumsAbstraction[0].artist}</h1>`
+
+    const albumHTML = albums.map( album => {
+        const songsArr = album.songs.map( song => {
+            return `
+            <div class="song-sort">
+                <p>${song.title}</p>
+                <p>${song.length}</p>
+            </div>
+            <hr>
+            `
+        })
+        return `
+        <div class="text-left mt-5">
+            <div class="cover-title">
+                <img src="${album.albumCover}">
+                <h3>${album.title}</h3>
+            </div>
+            <hr>
+            <div class="songs">
+                ${songsArr.join('')}
+            </div>
         </div>
+    `
+    })
+
+
+    return `<div class="text-left mt-5">
+                ${artist}
+                <hr>
+                ${albumHTML.join('')}
+            </div>
     `
 }
 

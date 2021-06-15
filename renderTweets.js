@@ -1,8 +1,75 @@
 
-function renderTweets(tweets) {
+function renderTweets(tweetsAbs) {
+    const tweetsHTML = tweetsAbs.map( tweet => {
+        if(tweet.user.isVerified){
+            return `
+                <div class='tweet'>
+                    <div class='profile-area profile-box'>
+                        <img src='${tweet.user.profilePic}' class='profile-pic'>
+                        <div class='profile-info'>
+                            <b>${tweet.user.username}</b><img src='https://www.pinclipart.com/picdir/middle/539-5394357_twitter-verified-badge-png-transparent-image-twitter-verified.png' class='icon'><br>
+                            <p style='font-size:10px; color:blue;'>${tweet.user.handle}</p>
+                        </div>
+                    </div>
+                    <div class='box'>
+                        <h4>${tweet.text}</h4>
+                        <hr>
+                    </div>
+                    <div class='tweet-extras'>
+                        <div class='extras'>
+                            <img src='https://cdn3.iconfinder.com/data/icons/twitter-ui/48/jee01-25-512.png' class='icon'>
+                            <div style='align-self:center;'>${tweet.replies}</div>
+                        </div>   
+                        <div class='extras'>
+                            <img src='https://www.pikpng.com/pngl/m/16-169951_retweet-twitter-png-retweet-icon-clipart.png' class='icon'>
+                            <div style='align-self:center;'>${tweet.retweets}</div>
+                        </div>
+                        <div class='extras'>
+                            <img src='https://cdn3.iconfinder.com/data/icons/twitter-20/512/166_Heart_Love_Like_Twitter-512.png' class='icon'>
+                            <div style='align-self:center;'>${tweet.likes}</div>
+                        </div>
+                        <img src='http://getdrawings.com/free-icon/direct-message-icon-51.png' class='icon' style='align-self:center;'> 
+                    </div>
+                </div>
+            `
+        } else{
+            return `
+            <div class='tweet'>
+                <div class='profile-area profile-box'>
+                    <img src='${tweet.user.profilePic}' class='profile-pic'>
+                    <div class='profile-info'>
+                        <b>${tweet.user.username}</b><br>
+                        <p style='font-size:10px; color:blue;'>${tweet.user.handle}</p>
+                    </div>
+                </div>
+                <div class='box'>
+                    <h4>${tweet.text}</h4>
+                    <hr>
+                </div>
+                <div class='tweet-extras'>
+                    <div class='extras'>
+                        <img src='https://cdn3.iconfinder.com/data/icons/twitter-ui/48/jee01-25-512.png' class='icon'>
+                        <div style='align-self:center;'>${tweet.replies}</div>
+                    </div>   
+                    <div class='extras'>
+                        <img src='https://www.pikpng.com/pngl/m/16-169951_retweet-twitter-png-retweet-icon-clipart.png' class='icon'>
+                        <div style='align-self:center;'>${tweet.retweets}</div>
+                    </div>
+                    <div class='extras'>
+                        <img src='https://cdn3.iconfinder.com/data/icons/twitter-20/512/166_Heart_Love_Like_Twitter-512.png' class='icon'>
+                        <div style='align-self:center;'>${tweet.likes}</div>
+                    </div>
+                    <img src='http://getdrawings.com/free-icon/direct-message-icon-51.png' class='icon' style='align-self:center;'> 
+                </div>
+            </div>
+            `
+        }
+
+    })
+    
     return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(tweets)}</code>
+        <div class="text-left mt-5" style='display:flex; flex-direction:column; align-content:space-evenly;'>
+            ${tweetsHTML.join('')}
         </div>
     `
 }
